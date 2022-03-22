@@ -32,12 +32,27 @@ while game_on:
     screen.update()
     ball.move()
 
-    if ball.ycor() >= 290:
-        ball.right(90)
-    elif ball.ycor() <= -290:
-        ball.left(90)
+    if ball.ycor() >= 280 or ball.ycor() <= -280:
+        ball.bounce()
 
+    if ball.distance(user1_paddle) < 50 and ball.xcor() > 320:
+        ball.paddle_bounce()
+    if ball.distance(user2_paddle) < 50 and ball.xcor() < -320:
+        ball.paddle_bounce()
 
+    if ball.xcor() > 380:
+        sleep(1)
+        ball.right_user_lose()
+        screen.update()
+        sleep(1)
+        ball.x_move *= -1
+
+    if ball.xcor() < -380:
+        sleep(1)
+        ball.left_user_loose()
+        screen.update()
+        sleep(1)
+        ball.x_move *= -1
 screen.exitonclick()
 
 
