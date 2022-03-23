@@ -25,4 +25,3 @@ class ScoreBoard(Turtle):
     def score_goes_to_right(self):
         self.r_score += 1
         self.update_score()
-

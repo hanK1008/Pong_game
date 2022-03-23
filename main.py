@@ -41,7 +41,9 @@ screen.onkeypress(user2_paddle.move_up, "w")
 screen.onkeypress(user2_paddle.move_down, "s")
 
 game_on = True
-time_fast = 0.1
+
+time_fast = 0.06
+speed = 0.06
 while game_on:
 
     sleep(time_fast)
@@ -53,7 +55,8 @@ while game_on:
 
     if ball.distance(user1_paddle) < 50 and ball.xcor() > 320:
         ball.paddle_bounce()
-        time_fast -= 0.01
+        if time_fast > 0.01:     # will prevent from time going to 0
+            time_fast -= 0.01
     if ball.distance(user2_paddle) < 50 and ball.xcor() < -320:
         ball.paddle_bounce()
 
@@ -65,7 +68,7 @@ while game_on:
         user2_paddle.paddle_reset()
         scoreboard.score_goes_to_left()
         screen.update()
-        time_fast = 0.1
+        time_fast = speed
         sleep(1)
 
     if ball.xcor() < -380:
@@ -75,7 +78,7 @@ while game_on:
         user2_paddle.paddle_reset()
         scoreboard.score_goes_to_right()
         screen.update()
-        time_fast = 0.1
+        time_fast = speed
         sleep(1)
 
 screen.exitonclick()
