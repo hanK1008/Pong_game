@@ -24,16 +24,13 @@ class Ball(Turtle):
     def paddle_bounce(self):
         self.x_move *= -1
 
-    def right_user_lose(self):
+    def reset_position(self):
         self.goto(0, 0)
+        self.paddle_bounce()   # reverse the bounce
         # sleep(1)
 
-    def left_user_loose(self):
-        self.goto(0, 0)
-        # sleep(1)
+    # def left_user_loose(self):
+    #     self.goto(0, 0)
+    #     # sleep(1)
 
-    def reverse_move(self):
-        new_x = self.xcor() - self.x_move
-        new_y = self.ycor() - self.y_move
 
-        self.goto(new_x, new_y)
