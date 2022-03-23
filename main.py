@@ -21,7 +21,6 @@ ball = Ball()
 scoreboard = ScoreBoard()
 
 # Creating middle Line
-
 y_axis = -450
 for l in range(10):
     l = Turtle()
@@ -31,6 +30,7 @@ for l in range(10):
     l.penup()
     y_axis += 100
     l.goto(0, y_axis)
+# Middle Line complete
 
 
 # Listening to input

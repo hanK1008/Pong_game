@@ -1,5 +1,4 @@
 from turtle import Turtle
-from time import sleep
 
 
 class Ball(Turtle):
@@ -27,10 +26,6 @@ class Ball(Turtle):
     def reset_position(self):
         self.goto(0, 0)
         self.paddle_bounce()   # reverse the bounce
-        # sleep(1)
 
-    # def left_user_loose(self):
-    #     self.goto(0, 0)
-    #     # sleep(1)
 
 
